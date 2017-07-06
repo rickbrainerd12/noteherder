@@ -1,19 +1,19 @@
 import React from 'react'
+import NoteForm from './NoteForm'
 
-const Note = (props) => {
+const Note = ({note}) => {
 
-    const handleClick = () => {
-        props.note.title
-        props.note.body
+    const handleClick =  () =>  {
+       setCurrentNote(note)
     }
 
     return (
         <a className="active" onClick = {handleClick}>
             <li>
                 <div className="note">
-                    <div className="note-title">{props.note.title}</div>
+                    <div className="note-title">{note.title}</div>
                     <div className="note-body">
-                        <p>{props.note.body}</p>
+                        <p>{note.body}</p>
                     </div>
                 </div>
             </li>
