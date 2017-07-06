@@ -1,41 +1,28 @@
 import React, { Component } from 'react'
 
-import Main from './Main'
 import './App.css'
+import Main from './Main'
 
 class App extends Component {
-  constructor(){
+  constructor() {
     super()
-    
-    this.setCurrentNote = this.setCurrentNote.bind(this)
 
     this.state = {
-      notes: {
-        'note-1': {
-            id: 'note-1',
-            title: 'My fancy note from App',
-            body: 'This note is so fancy!',
-        },
-        'note-2': {
-            id: 'note-2',
-            title: 'another one from App',
-            body: 'also fancy',
-        },
-      },
-      currentNote: this.blankNote
+      notes: {},
+      currentNote: this.blankNote(),
     }
   }
 
-  blankNote = ()=> {
-    return{
-          id: null,
-          title: '',
-          body: '',
+  blankNote = () => {
+    return {
+      id: null,
+      title: '',
+      body: '',
     }
   }
 
   setCurrentNote = (note) => {
-    this.setState({currentNote: note})
+    this.setState({ currentNote: note })
   }
 
   resetCurrentNote = () => {
@@ -44,33 +31,47 @@ class App extends Component {
 
   saveNote = (note) => {
     const notes = {...this.state.notes}
-    if(!note.id){
+    if (!note.id) {
       note.id = Date.now()
     }
     notes[note.id] = note
-    this.setState({notes: notes, currentNote: note})
+
+    this.setState({ notes })
+    this.setCurrentNote(note)
+  }
+
+  removeCurrentNote = () => {
+    const notes = {...this.state.notes}
+
+    delete notes[this.state.currentNote.id]
+
+    this.setState({notes})
+    this.resetCurrentNote()
   }
 
   render() {
-    const actions ={
+    const actions = {
       setCurrentNote: this.setCurrentNote,
       resetCurrentNote: this.resetCurrentNote,
+      saveNote: this.saveNote,
     }
 
     const noteData = {
       notes: this.state.notes,
       currentNote: this.state.currentNote,
+      saveNote: this.currentNote,
+      removeCurrentNote: this.removeCurrentNote,
     }
 
     return (
       <div className="App">
-        <Main {...actions}
-              {...noteData}
-
+        <Main
+          {...actions}
+          {...noteData}
         />
       </div>
     );
   }
 }
 
-export default App;
+export default App
