@@ -57,6 +57,8 @@ class App extends Component {
 
     this.setState({ notes })
     this.resetCurrentNote()
+
+    console.log('is works')
   }
 
   render() {

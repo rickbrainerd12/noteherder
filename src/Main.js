@@ -5,7 +5,7 @@ import Sidebar from './Sidebar'
 import NoteList from './NoteList'
 import NoteForm from './NoteForm'
 
-const Main = ({ notes, currentNote, setCurrentNote, resetCurrentNote, saveNote }) => {
+const Main = ({ notes, currentNote, setCurrentNote, resetCurrentNote, saveNote, removeCurrentNote }) => {
   return (
     <div className="Main">
       <Sidebar
@@ -18,6 +18,7 @@ const Main = ({ notes, currentNote, setCurrentNote, resetCurrentNote, saveNote }
       <NoteForm
         currentNote={currentNote}
         saveNote={saveNote}
+        removeCurrentNote={removeCurrentNote}
       />
     </div>
   )
