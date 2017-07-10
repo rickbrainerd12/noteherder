@@ -29,7 +29,9 @@ const Sidebar = ({ resetCurrentNote, signOut }) => {
         />
       </a>
       <div className="SignOut">
-        <button onClick = {signOut}>
+        <button
+          onClick={signOut}
+        >
           <i className="fa fa-sign-out"></i>
         </button>
       </div>

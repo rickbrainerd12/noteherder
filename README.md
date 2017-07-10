@@ -17,8 +17,12 @@ Run `yarn install`(`or npm install`) and `yarn start` (or `npm start`)
 ### Super Mega Bonus Credit
 * Make the _delete_ button work.
 
-### SUper Mega Bonus Credit Hyper Fighting
+### Super Mega Bonus Credit Hyper Fighting
 * Make the "+" button in the sidebar clear out the form so a new note can be added
+
+### Homework
+
+*add github login to webpage
 
 
 
