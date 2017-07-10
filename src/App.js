@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-
 import base, { auth } from './base'
 
 import './App.css'
@@ -20,14 +19,13 @@ class App extends Component {
   componentWillMount = () => {
     this.getUserFromLocalStorage()
     auth.onAuthStateChanged(
-      (user) =>{
-        if(user){
-          //signed in
+      (user) => {
+        if (user) {
+          // signed in
           this.handleAuth(user)
         } else {
-          //signed out
-          this.handleUnauth
-
+          // signed out
+          this.handleUnauth()
         }
       }
     )
@@ -35,15 +33,16 @@ class App extends Component {
 
   getUserFromLocalStorage = () => {
     const uid = localStorage.getItem('uid')
-    if(!uid) return
+    if (!uid) return
     this.setState({ uid })
   }
 
   syncNotes = () => {
     this.bindingRef = base.syncState(
-      `notes/${this.state.uid}`, {
-        context: this, //What object the state is on
-        state: 'notes', //Which property of state to sync
+      `notes/${this.state.uid}`,
+      {
+        context: this,  // what object the state is on
+        state: 'notes', // which property to sync
       }
     )
   }
@@ -84,29 +83,28 @@ class App extends Component {
   }
 
   signedIn = () => {
-      return this.state.uid
+    return this.state.uid
   }
 
   handleAuth = (user) => {
     localStorage.setItem('uid', user.uid)
     this.setState(
-      {uid: user.uid},
-       this.syncNotes
+      { uid: user.uid },
+      this.syncNotes
     )
   }
 
   handleUnauth = () => {
     localStorage.removeItem('uid')
-
-    if(this.bindingRef){
+    if (this.bindingRef) {
       base.removeBinding(this.bindingRef)
     }
 
-      this.setState({
-        uid: null,
-        currentNote: this.blankNote(),
-        notes: {},
-      })
+    this.setState({
+      uid: null,
+      notes: {},
+      currentNote: this.blankNote(),
+    })
   }
 
   signOut = () => {
@@ -114,7 +112,7 @@ class App extends Component {
   }
 
   renderMain() {
-     const actions = {
+    const actions = {
       setCurrentNote: this.setCurrentNote,
       resetCurrentNote: this.resetCurrentNote,
       saveNote: this.saveNote,
@@ -129,17 +127,16 @@ class App extends Component {
 
     return (
       <Main
-          {...actions}
-          {...noteData}
+        {...actions}
+        {...noteData}
       />
     )
   }
 
   render() {
-
     return (
       <div className="App">
-        {this.signedIn() ? this.renderMain() : <SignIn />}
+        { this.signedIn() ? this.renderMain() : <SignIn /> }
       </div>
     );
   }
