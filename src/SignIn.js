@@ -23,8 +23,8 @@ const SignIn = () => {
       <main>
         <h3>Hey, Nerd! You Like Notes?</h3>
         <p>You never know when you'll need to write crap down. In fact, you should probably be taking notes right now.</p>
-        <button class="github" onClick={authenticateGit}>
-            <i class="fa fa-github"></i>
+        <button className="github" onClick={authenticateGit}>
+            <i className="fa fa-github"></i>
             Sign in with GitHub
           </button>
         <button
