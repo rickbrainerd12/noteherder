@@ -6,7 +6,7 @@ import googleLogo from './google.svg'
 import { auth, googleProvider, gitHubProvider } from './base'
 
 const SignIn = () => {
-  const authenticate = () => {
+  const authenticateGoogle = () => {
     auth.signInWithPopup(googleProvider)
   }
 
@@ -29,7 +29,7 @@ const SignIn = () => {
           </button>
         <button
           className="google"
-          onClick={authenticate}
+          onClick={authenticateGoogle}
         >
           <img src={googleLogo} alt="" />
           Sign in with Google
