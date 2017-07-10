@@ -34,7 +34,7 @@ class App extends Component {
 
   syncNotes = () => {
     base.syncState(
-      'notes', {
+      `${this.state.uid}/notes`, {
         context: this, //What object the state is on
         state: 'notes', //Which property of state to sync
       }
@@ -85,7 +85,7 @@ class App extends Component {
   handleAuth = (user) => {
     this.setState(
       {uid: user.uid},
-       this.syncNotes()
+       this.syncNotes
     )
   }
 
