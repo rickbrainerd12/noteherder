@@ -1,27 +1,19 @@
 .NoteForm {
-  -ms-flex-positive: 1;
   flex-grow: 1;
   padding: 0 3rem;
 }
 .NoteForm .form-actions {
   padding-top: 1rem;
   margin-left: -2rem;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-line-pack: center;
   align-content: center;
 }
 .NoteForm button {
   border: none;
   background: none;
+  cursor: pointer;
+  outline: none;
   padding: 0;
-}
-.NoteForm button[type=submit] {
-  background-color: #008bf8;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 1.4rem;
-  padding: 1rem;
 }
 .NoteForm button i.fa {
   color: #999;
@@ -29,23 +21,21 @@
   margin: 0;
 }
 .NoteForm form {
-  margin: 0 auto;
+  border-top: 1px solid #eee;
+  margin: 2.8rem auto 0;
+  padding-top: 0.5rem;
   max-width: 80rem;
 }
-.NoteForm input[name=title] {
+input[name="title"] {
   border: none;
   font-size: 200%;
-  font-family: Fauna One;
-  color: #008bf8;
+  font-family: "Fauna One";
+  color: #008BF8;
   font-weight: 400;
   width: 100%;
-  outline: none;
 }
-.NoteForm textarea {
-  border-color: #eee;
-  width: 100%;
-  height: calc(100vh - 140px);
-  font-size: 1.3em;
+input[name="title"] {
+  outline: none;
 }
 
 .RichTextEditor__root___2QXK- {
