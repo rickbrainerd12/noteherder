@@ -53,7 +53,9 @@ class App extends Component {
     let shouldRedirect = false
     if (!note.id) {
       note.id = Date.now()
+      note.updatedAt= `${Date().slice(0,23)}`
       shouldRedirect = true
+
     }
 
     const notes = {...this.state.notes}

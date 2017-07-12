@@ -26,7 +26,7 @@ class NoteForm extends Component {
       editorValue = RichTextEditor.createValueFromString(note.body, 'html')
     }
 
-    this.setState({ note, editorValue })
+    this.setState({ note, editorValue, })
   }
 
   blankNote = () => {
@@ -34,6 +34,7 @@ class NoteForm extends Component {
       id: null,
       title: '',
       body: '',
+      updatedAt:'',
     }
   }
 

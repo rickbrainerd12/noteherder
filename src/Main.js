@@ -12,6 +12,7 @@ const Main = (props) => {
     saveNote: props.saveNote,
     removeNote: props.removeNote,
     firebaseNotesSynced: props.firebaseNotesSynced,
+    updatedAt: props.updatedAt,
   }
 
   return (

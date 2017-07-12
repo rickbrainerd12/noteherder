@@ -33,9 +33,17 @@ Run `yarn deploy` (or `npm run deploy`) to deploy the app to Firebase
 ### Super Mega Bonus Credit Hyper Fighting
 * Make the "+" button in the sidebar clear out the form so a new note can be added
 
-### Homework
+### Homework Day 8
 
 *add github login to webpage
+
+### Day 10 Homework
+
+* add an `updatedAt` field to notes (updating its value every time you save the note)
+
+### Super Mega Bonus Credit
+
+* Sort the notes in the list with the most recently updated at the top
 
 
 

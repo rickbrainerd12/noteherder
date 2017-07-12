@@ -9,6 +9,9 @@ const Note = ({ note }) => {
           <div className="note-title">
             {note.title}
           </div>
+          <div className="note-updatedAt">
+            {note.updatedAt}
+          </div>
           <div
             className="note-body"
             dangerouslySetInnerHTML={{ __html: note.body }}
