@@ -6,13 +6,13 @@ import googleLogo from './google.svg'
 import { auth, googleProvider, gitHubProvider } from './base'
 
 const SignIn = () => {
-  const authenticateGoogle = () => {
-    auth.signInWithPopup(googleProvider)
-  }
+    const authenticateGoogle = () => {
+      auth.signInWithPopup(googleProvider)
+    }
 
-  const authenticateGit = () => {
-      auth.signInWithPopup(gitHubProvider)
-  }
+    const authenticateGit = () => {
+        auth.signInWithPopup(gitHubProvider)
+    }
 
   return (
     <div className="SignIn">
