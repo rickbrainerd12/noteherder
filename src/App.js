@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import {Route, Switch, Redirect} from 'react-router-dom'
-import base, { auth } from './base'
+import { Route, Switch, Redirect } from 'react-router-dom'
 
 import './App.css'
 import Main from './Main'
 import SignIn from './SignIn'
+import base, { auth } from './base'
 
 class App extends Component {
   constructor() {
@@ -48,7 +48,7 @@ class App extends Component {
   }
 
   saveNote = (note) => {
-    let shouldRedirect = false    
+    let shouldRedirect = false
     if (!note.id) {
       note.id = Date.now()
       shouldRedirect = true
@@ -58,7 +58,8 @@ class App extends Component {
     notes[note.id] = note
 
     this.setState({ notes })
-    if(shouldRedirect){
+
+    if (shouldRedirect) {
       this.props.history.push(`/notes/${note.id}`)
     }
   }
@@ -122,23 +123,23 @@ class App extends Component {
     return (
       <div className="App">
         <Switch>
-          <Route 
-            path="/sign-in" 
-            render={()=>(
+          <Route
+            path="/sign-in"
+            render={() => (
               this.signedIn()
-                ? <Redirect to="/notes"/>
+                ? <Redirect to="/notes" />
                 : <SignIn />
             )}
           />
-          <Route 
-            path="/notes" 
-            render={()=> (
+          <Route
+            path="/notes"
+            render={() => (
               this.signedIn()
-              ? this.renderMain()
-              : <Redirect to="/sign-in"/>
+                ? this.renderMain()
+                : <Redirect to="/sign-in" />
             )}
           />
-          <Route render={ ()=> <Redirect to="/notes" /> } />
+          <Route render={() => <Redirect to="/notes" /> } />
         </Switch>
       </div>
     );
