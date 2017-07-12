@@ -2,6 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
+/ => /sign-in (if not signed in)
+  => /notes (if signed in)
+
+/sign-in
+/notes
+/notes/21341
+
 ## Getting Started
 
 Copy `src/base.example.js` to `stc/base.js` and fill in your Firebase config details.
